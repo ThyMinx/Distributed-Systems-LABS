@@ -8,6 +8,8 @@ using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 
+using TranslationInterface;
+
 namespace TranslationServer
 {
     class Program
@@ -23,9 +25,9 @@ namespace TranslationServer
         }
     }
 
-    public class Translator : MarshalByRefObject
+    public class Translator : MarshalByRefObject, ITranslation
     {
-        public string Translate(string EnglishString)
+        string ITranslation.Translate(string EnglishString)
         {
             string[] words = EnglishString.Split(' ');
             string result = "";
@@ -35,6 +37,16 @@ namespace TranslationServer
                 result += word.Substring(0, 1) + "ay ";
             }
             return result;
+        }
+
+        string ITranslation.GetName()
+        {
+            return "James Cairns";
+        }
+
+        string ITranslation.GetStudentId()
+        {
+            return "201601620";
         }
     }
 }

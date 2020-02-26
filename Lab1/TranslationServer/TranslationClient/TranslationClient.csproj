@@ -80,9 +80,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TranslationServer\TranslationServer.csproj">
-      <Project>{c2e219b4-3f9c-4f35-9fd1-81bea2fd27c2}</Project>
-      <Name>TranslationServer</Name>
+    <ProjectReference Include="..\TranslationInterface\TranslationInterface.csproj">
+      <Project>{604bb558-2d22-4c4f-8918-3a828c0883dc}</Project>
+      <Name>TranslationInterface</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
